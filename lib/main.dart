@@ -27,17 +27,18 @@ class _MyAppState extends State<StatefulWidget> {
     var questions = [
       {
         'questionText': "What\'s your favorite color?",
-        'answears': ['white', 'blue', 'lilac', 'orange']
+        'answers': ['white', 'blue', 'lilac', 'orange']
       },
       {
         'questionText': "What\'s your favorite animal?",
-        'answears': ['dog', 'cat', 'tiger', 'lion']
+        'answers': ['dog', 'cat', 'tiger', 'lion']
       },
       {
         'questionText': "What\'s your favorite meal?",
-        'answears': ['apples', 'fries', 'hamburger', 'pizza']
+        'answers': ['apples', 'fries', 'hamburger', 'pizza']
       }
     ];
+
     return MaterialApp(
         theme: ThemeData(primarySwatch: Colors.blueGrey),
         home: Scaffold(
@@ -49,7 +50,7 @@ class _MyAppState extends State<StatefulWidget> {
           ),
           body: Column(children: [
             Question(questions[_questionIndex]['questionText'] as String),
-            ...(questions[_questionIndex]['answer'] as List<String>)
+            ...(questions[_questionIndex]['answers'] as List<String>)
                 .map((answer) {
               return Answer(_answerQuestion, answer);
             }).toList()
